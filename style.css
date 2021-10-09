@@ -1,0 +1,56 @@
+*,
+*:after,
+*:before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background-color: rgb(190,06,108)
+}
+.container {
+  width: 80vmin;
+  min-width: 320px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.container > div {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.container input {
+  width: 280px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-bottom: 1px solid #760088;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: #3E0047;
+}
+
+
+
+
+
+
+
+
+
+
