@@ -10,6 +10,7 @@ function toHex(rgb) {
   } else {
     rgbCode = rgb
   }
+  
   let arr = rgbCode.split(',');
   let condition = arr.every(num => num <= 255);
 
@@ -30,7 +31,13 @@ function toHex(rgb) {
   }
 }
 rgbinput.oninput = function() {
-  toHex(rgbinput.value);
+  if (/[^rgb)(0-9,]/ig.test(rgbinput.value)) {
+    let rgb = rgbinput.value.replace(/[^rgb)(0-9,]/ig, '');
+    toHex(rgb);
+    notValid(rgbinput, hexinput);
+  } else {
+    toHex(rgbinput.value);
+  }
   restfile(rgbinput, hexinput)
 }
 
@@ -62,13 +69,14 @@ function isValid(firstElm, secondElm) {
   firstElm.style.color = '#008E54';
   secondElm.style.color = '#008E54'
 }
+
 function notValid(firstElm, secondElm) {
   firstElm.style.color = '#BB2A2A';
   secondElm.style.color = '#BB2A2A'
 }
+
 function restfile(firstElm, secondElm) {
   if (firstElm.value == '') {
     secondElm.value = ''
   }
 }
-
